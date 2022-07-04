@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Category = require('../../../../libs/categorias');
-const CategoryDao = require('../../../../dao/models/CategoryDao');
+const CategoryDao = require('../../../../dao/mongodb/models/CategoryDao');
 const catDao = new CategoryDao();
 const cat = new Category(catDao);
 cat.init();

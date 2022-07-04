@@ -1,4 +1,4 @@
-const DaoObject = require('../../dao/DaoObject');
+const DaoObject = require('../../dao/mongodb/DaoObject');
 module.exports = class Usuario {
   usuarioDao = null;
  
@@ -55,6 +55,14 @@ module.exports = class Usuario {
     return this.usuarioDao.getById({ codigo });
   }
 
+  async getUsuarioByEmail({email}) {
+    return this.usuarioDao.getByEmail({email});
+  }
+
+  comparePasswords(rawPassword, dbPassword) {
+    return bcrypt.compareSync(rawPassword, dbPassword);
+  }
+
   async updateUsuario({ email,
     nombre,
     avatar,
@@ -88,4 +96,5 @@ module.exports = class Usuario {
       deleted: result.changes
     };
   }
+    
 }

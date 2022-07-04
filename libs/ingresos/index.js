@@ -1,4 +1,4 @@
-const DaoObject = require("../../dao/DaoObject");
+const DaoObject = require("../../dao/mongodb/DaoObject");
 module.exports = class Ingreso {
   IngresoDao = null;
 

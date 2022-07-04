@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Ingreso = require('../../../../libs/ingresos');
-const IngresoDao = require('../../../../dao/models/IngresoDao');
+const IngresoDao = require('../../../../dao/mongodb/models/IngresoDao');
 const catDao = new IngresoDao();
 const cat = new Ingreso(catDao);
 cat.init();
